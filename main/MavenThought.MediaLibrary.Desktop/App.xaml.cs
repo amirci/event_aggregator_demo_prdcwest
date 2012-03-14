@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using Bootstrap;
 using Bootstrap.WindsorExtension;
-using MavenThought.MediaLibrary.Desktop.AddMovie;
 
 namespace MavenThought.MediaLibrary.Desktop
 {
