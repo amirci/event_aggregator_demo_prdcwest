@@ -8,7 +8,6 @@ using MavenThought.MediaLibrary.Desktop.Contents;
 using MavenThought.MediaLibrary.Desktop.Poster;
 using MavenThought.MediaLibrary.Desktop.Reviews;
 using MavenThought.MediaLibrary.Domain;
-using Microsoft.Practices.ServiceLocation;
 
 namespace MavenThought.MediaLibrary.Desktop
 {
@@ -17,15 +16,10 @@ namespace MavenThought.MediaLibrary.Desktop
         public void Register(IWindsorContainer container)
         {
             container.Register(
-                Component
-                    .For<IMediaLibrary>()
-                    .ImplementedBy<MovieLibrary>(),
-                Component
-                    .For<IEventAggregator>()
-                    .ImplementedBy<EventAggregator>(),
-                Component
-                    .For<IWindsorContainer>()
-                    .Instance(container));
+                Component.For<IMediaLibrary>().ImplementedBy<MovieLibrary>(),
+                Component.For<IEventAggregator>().ImplementedBy<EventAggregator>(),
+                Component.For<IWindsorContainer>().Instance(container)
+                );
 
             RegisterViews(container);
 
@@ -43,9 +37,7 @@ namespace MavenThought.MediaLibrary.Desktop
         {
             container.Register(
                 // Add movie
-                Component
-                    .For<AddMovieViewModel>()
-                    .Named("AddViewVM"),
+                Component.For<AddMovieViewModel>().Named("AddViewVM"),
                 Component
                     .For<ILibraryView>()
                     .ImplementedBy<AddMovieView>()

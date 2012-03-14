@@ -1,6 +1,6 @@
 using System;
 using MavenThought.Commons.Testing;
-using MbUnit.Framework;
+using NUnit.Framework;
 using SharpTestsEx;
 
 namespace MavenThought.MediaLibrary.Core.Tests
@@ -19,9 +19,9 @@ namespace MavenThought.MediaLibrary.Core.Tests
         /// <summary>
         /// Initializes <see cref="When_movie_gets_title_assigned"/>
         /// </summary>
-        public When_movie_gets_release_date_assigned([RandomNumbers(Count = 10, Minimum = 0, Maximum = 360)]int days)
+        public When_movie_gets_release_date_assigned()
         {
-            _expected = DateTime.Now.AddDays(days);
+            _expected = DateTime.Now.AddDays(3);
         }
 
         /// <summary>
