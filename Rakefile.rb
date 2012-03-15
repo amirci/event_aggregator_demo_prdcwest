@@ -52,9 +52,9 @@ end
 namespace :test do
 	
 	desc 'Run all tests'
-	task :all => [:default] do 
-		tests = FileList["test/**/bin/debug/**/*.Tests.dll"].join " "
-		system "./tools/gallio/bin/gallio.echo.exe #{tests}"
+	nunit :all => [:default] do |nunit|
+		nunit.command = FileList["packages/NUnit*/tools/nunit-console.exe"].first
+		nunit.assemblies = FileList["test/**/bin/debug/**/*.Tests.dll"]
 	end
 	
 end

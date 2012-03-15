@@ -8,7 +8,8 @@ namespace MavenThought.MediaLibrary.Desktop.Poster
     /// <summary>
     /// View model for posters
     /// </summary>
-    public class PosterViewModel : AbstractNotifyPropertyChanged, IHandleEventsOfType<IMovieAdded>
+    public class PosterViewModel : AbstractNotifyPropertyChanged
+        , IHandleEventsOfType<IMovieAdded>
     {
         public PosterViewModel()
         {
